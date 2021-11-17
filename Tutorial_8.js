@@ -38,7 +38,7 @@ let p2 = new Point(1, 7, 9);
 let p3 = new Point(50, 1, 6);
 
 console.log(p1.distanceFrom(p2));
-console.log(Point.distance(p1, p2) + " ");
+console.log(Point.distance(p1, p2));
 console.log(Point.distance(p2, p3));
 
 console.log(p1.distanceFromOrigin);
@@ -51,5 +51,5 @@ p2.y = 15;
 p3.z = 40;
 
 console.log(p1.distanceFromOrigin);
-console.log(p2.distanceFromOrigin + " ");
+console.log(p2.distanceFromOrigin);
 console.log(p3.distanceFromOrigin);
