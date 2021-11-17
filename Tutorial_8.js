@@ -1,5 +1,23 @@
-class Point
-{
+class Point {
+    constructor(x, y, z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
+
+    distanceFrom(anotherPoint) {
+        return Math.sqrt(Math.pow((anotherPoint.x - this.x), 2) + Math.pow((anotherPoint.y - this.y), 2) + Math.pow((anotherPoint.z - this.z), 2));
+    };
+
+
+    static distance(Point1, Point2) {
+        return Point1.distanceFrom(Point2);
+    }
+
+    get distanceFromOrigin() {
+        return Point.distance(this, new Point(0, 0, 0));
+    }
+
     /*
     Use the class notation to create a class that represents a 3-dimensional point according to the following requirements:
 	The three variables representing the point coordinates should be initialized and added to the new object through the constructor function.
@@ -10,19 +28,18 @@ class Point
 
 	Allow access to the calculated distance from the origin (0,0,0) through a getter method
     */
-
-   
 }
+
 
 // Please don't change the lines below
 
-let p1 = new Point(5,4,3);
-let p2 = new Point(1,7,9);
-let p3 = new Point (50,1,6);
+let p1 = new Point(5, 4, 3);
+let p2 = new Point(1, 7, 9);
+let p3 = new Point(50, 1, 6);
 
 console.log(p1.distanceFrom(p2));
-console.log(Point.distance(p1,p2));
-console.log(Point.distance(p2,p3));
+console.log(Point.distance(p1, p2));
+console.log(Point.distance(p2, p3));
 
 console.log(p1.distanceFromOrigin);
 console.log(p2.distanceFromOrigin);
@@ -36,4 +53,3 @@ p3.z = 40;
 console.log(p1.distanceFromOrigin);
 console.log(p2.distanceFromOrigin);
 console.log(p3.distanceFromOrigin);
-
